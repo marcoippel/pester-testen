@@ -11,3 +11,18 @@ function GetFiles($path){
 function GetContent($path){
     return Get-Content $path
 }
+
+function GetDate(){
+    $date = Get-Date
+    return $date
+}
+
+function GetDay(){
+    $date = Get-Date -f "dd"
+    return $date
+}
+
+function GetMonth(){
+    $date = Get-Date -f "MM"
+    return $date
+}
