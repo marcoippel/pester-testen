@@ -26,3 +26,7 @@ function GetMonth(){
     $date = Get-Date -f "MM"
     return $date
 }
+
+function Calculate($number1, $number2) {
+    return $number1 + $number2
+}

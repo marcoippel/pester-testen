@@ -77,4 +77,17 @@ InModuleScope Demo {
             $testResult | Should be "02"
         }
     }
+
+    $calculatorCases = @(
+        @{NumberOne = 1; NumberTwo = 1; Result = 2 }
+        @{NumberOne = 1; NumberTwo = -2; Result = -1 }
+        @{NumberOne = 100; NumberTwo = 1; Result = 101 }
+    )
+    Describe "Calculate" {
+        It "Add" -TestCases $calculatorCases {
+            param($NumberOne, $NumberTwo, $Result)
+            $result = Calculate -number1 $NumberOne -number2 $NumberTwo
+            $result | Should be $Result
+        }
+    }
 }
